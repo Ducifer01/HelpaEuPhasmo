@@ -1,7 +1,7 @@
 {
   "name": "helpaeuphasmo",
   "productName": "HelpaEuPhasmo",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Overlay ajudante para Phasmophobia: evidências, características, cronômetros e dicas para identificar os fantasmas (inclusive sem evidências).",
   "main": "main.js",
   "author": "Ducifer01",

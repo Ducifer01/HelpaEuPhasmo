@@ -2,126 +2,19 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'">
   <title>HelpaEuPhasmo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="modo-dashboard">
-  <div id="app">
-    <header class="barra">
-      <div class="marca">
-        <span class="logo">👻</span>
-        <span class="titulo">HelpaEuPhasmo</span>
-      </div>
-      <button class="chip-contrato no-drag" id="btn-contrato" title="Configurar contrato">
-        <span id="txt-contrato">Configurar contrato</span>
-      </button>
-      <div class="restam" id="txt-restam"></div>
-      <div class="acoes no-drag">
-        <button class="ic" id="btn-novo" title="Novo contrato (zera tudo)">🔄</button>
-        <button class="ic" id="btn-guia" title="Guia rápido: dificuldades, mecânicas e dicas">📘</button>
-        <button class="ic" id="btn-config" title="Configurações e atalhos">⚙️</button>
-        <button class="ic" id="btn-modo" title="Alternar Dashboard / HUD compacto">🗗</button>
-        <button class="ic" id="btn-clique" title="Clique-através (o mouse passa para o jogo)">🖱️</button>
-        <button class="ic" id="btn-ocultar" title="Ocultar (volte pelo atalho ou pela bandeja)">—</button>
-        <button class="ic fechar" id="btn-fechar" title="Fechar">✕</button>
-      </div>
-    </header>
-
-    <!-- ═════════════ DASHBOARD ═════════════ -->
-    <main class="dashboard">
-      <section class="coluna esquerda">
-        <div class="card">
-          <div class="card-titulo">
-            <span>Evidências</span>
-            <span class="contador" id="txt-evid-contador"></span>
-          </div>
-          <div class="evidencias" id="lista-evid"></div>
-          <p class="ajuda">Clique: ✓ encontrada → ✗ descartada → limpar. Botão direito: descartar.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-titulo"><span>Sanidade na caçada</span><button class="link" id="btn-san-limpar">limpar</button></div>
-          <p class="ajuda">Maior sanidade MÉDIA em que ele já caçou (sem item amaldiçoado):</p>
-          <div class="grade-botoes" id="lista-sanidade"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-titulo"><span>Toque de passos</span><span class="atalho-dica" data-acao="passo"></span></div>
-          <button class="btn-toque" id="btn-toque">
-            <span class="vel" id="txt-vel">— m/s</span>
-            <span class="bpm" id="txt-bpm">toque no ritmo dos passos</span>
-          </button>
-          <div class="linha-mini">
-            <button class="link" id="btn-toque-reset">zerar</button>
-            <button class="link" id="btn-toque-salvar">guardar medição</button>
-          </div>
-          <div class="compat" id="txt-compat"></div>
-          <div class="historico-vel" id="lista-vel"></div>
-        </div>
-
-        <div class="card">
-          <div class="card-titulo"><span>Notas</span></div>
-          <textarea id="notas" placeholder="Cômodo favorito, eventos, horários…"></textarea>
-        </div>
-      </section>
-
-      <section class="coluna centro">
-        <div class="barra-fantasmas">
-          <input type="search" id="busca" placeholder="Buscar fantasma…" class="no-drag">
-          <label class="check"><input type="checkbox" id="chk-descartados" checked> mostrar descartados</label>
-        </div>
-        <div class="alerta oculto" id="alerta-nenhum">Nenhum fantasma combina com as marcações. Revise evidências/características.</div>
-        <div class="grade-fantasmas" id="grade-fantasmas"></div>
-        <div class="card sugestoes">
-          <div class="card-titulo"><span>💡 Próximos testes sugeridos</span></div>
-          <div id="lista-sugestoes" class="lista-sugestoes"></div>
-        </div>
-      </section>
-
-      <section class="coluna direita">
-        <div class="card">
-          <div class="card-titulo"><span>Cronômetros</span><button class="link" id="btn-zerar-timers">zerar todos</button></div>
-          <div id="timers"></div>
-        </div>
-        <div class="card cresce">
-          <div class="card-titulo"><span>Características</span><button class="link" id="btn-marc-limpar">limpar</button></div>
-          <input type="search" id="busca-marc" placeholder="Filtrar características… (ex.: rápido, sal)">
-          <div class="abas" id="abas-marc"></div>
-          <div class="lista-marc" id="lista-marc"></div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ═════════════ HUD COMPACTO ═════════════ -->
-    <main class="hud">
-      <div class="hud-restam" id="hud-restam"></div>
-      <div class="hud-evid" id="hud-evid"></div>
-      <div class="hud-timers" id="hud-timers"></div>
-      <button class="btn-toque mini" id="hud-toque"><span class="vel" id="hud-vel">— m/s</span><span class="bpm" id="hud-bpm">passos</span></button>
-      <div class="hud-sug" id="hud-sug"></div>
-    </main>
-
-    <div class="selo-clique oculto" id="selo-clique">Clique-através ATIVO — use o atalho para voltar</div>
-    <div class="resize" id="resize" title="Arraste para redimensionar"></div>
-  </div>
-
-  <div class="fundo-modal oculto" id="fundo-modal">
-    <div class="modal" id="modal" role="dialog" aria-modal="true">
-      <div class="modal-topo">
-        <h2 id="modal-titulo"></h2>
-        <button class="ic fechar" id="modal-fechar" title="Fechar">✕</button>
-      </div>
-      <div class="modal-corpo" id="modal-corpo"></div>
-    </div>
-  </div>
-  <div class="toasts" id="toasts"></div>
-
+<body>
+  <div class="win" id="win"></div>
   <script src="data/evidencias.js"></script>
   <script src="data/fantasmas.js"></script>
   <script src="data/caracteristicas.js"></script>
   <script src="data/guia.js"></script>
   <script src="js/motor.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/estado.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>

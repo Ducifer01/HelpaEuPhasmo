@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-const canaisEntrada = ['atalho', 'estado:modo', 'estado:clique-atraves', 'atalhos:falhas'];
+const canaisEntrada = ['estado', 'config', 'aviso', 'comando', 'atalhos:falhas'];
 
 contextBridge.exposeInMainWorld('overlay', {
   disponivel: true,
@@ -8,14 +8,17 @@ contextBridge.exposeInMainWorld('overlay', {
     if (!canaisEntrada.includes(canal)) return;
     ipcRenderer.on(canal, (_e, dado) => cb(dado));
   },
-  obterConfig: () => ipcRenderer.invoke('config:obter'),
-  salvarUi: (ui) => ipcRenderer.invoke('config:ui', ui),
-  definirAtalhos: (atalhos) => ipcRenderer.invoke('atalhos:definir', atalhos),
-  pausarAtalhos: (pausar) => ipcRenderer.invoke('atalhos:pausar', pausar),
-  modo: (m) => ipcRenderer.send('janela:modo', m),
-  cliqueAtraves: (v) => ipcRenderer.send('janela:clique-atraves', v),
+  iniciar: () => ipcRenderer.invoke('iniciar'),
+  acao: (a) => ipcRenderer.send('acao', a),
+  modo: (m) => ipcRenderer.send('modo', m),
+  atraves: (v) => ipcRenderer.send('atraves', v),
+  hudConfig: (k, patch) => ipcRenderer.send('hud:config', { k, patch }),
+  hudTamanho: (w, h, topo) => ipcRenderer.send('hud:tamanho', { w, h, topo }),
+  capturarMouse: (v) => ipcRenderer.send('mouse:capturar', !!v),
+  salvarUi: (ui) => ipcRenderer.send('ui', ui),
+  definirAtalhos: (at) => ipcRenderer.invoke('atalhos:definir', at),
+  pausarAtalhos: (p) => ipcRenderer.invoke('atalhos:pausar', p),
   ocultar: () => ipcRenderer.send('janela:ocultar'),
   minimizar: () => ipcRenderer.send('janela:minimizar'),
-  fechar: () => ipcRenderer.send('janela:fechar'),
-  redimensionar: (width, height) => ipcRenderer.send('janela:redimensionar', { width, height })
+  fechar: () => ipcRenderer.send('janela:fechar')
 });
