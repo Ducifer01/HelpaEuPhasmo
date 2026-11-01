@@ -49,7 +49,12 @@ Todos os atalhos podem ser trocados em ⚙️ **Configurações** (também dá p
 
 ## Baixar pronto
 
-Cada push gera o `.exe` no GitHub Actions: abra a aba **Actions → Build Windows**, entre na execução mais recente e baixe o artefato **HelpaEuPhasmo-windows** (tem o instalador e a versão portátil).
+Baixe o `.exe` na página de [Releases](https://github.com/Ducifer01/HelpaEuPhasmo/releases):
+
+- **HelpaEuPhasmo-x.y.z-portable.exe** — não precisa instalar, é só abrir (recomendado).
+- **HelpaEuPhasmo-x.y.z-win-x64.zip** — a mesma versão em pasta: extraia e abra `HelpaEuPhasmo.exe` (abre mais rápido que o portátil).
+
+O Windows pode mostrar o aviso "O Windows protegeu o computador" porque o app não é assinado digitalmente: clique em **Mais informações → Executar assim mesmo**.
 
 ## Rodar e buildar no seu PC
 
@@ -62,8 +67,9 @@ npm install
 npm start                 # abre o overlay em modo de desenvolvimento
 npm test                  # testes do motor de dedução
 npm run build:portable    # gera dist/HelpaEuPhasmo-1.0.0-portable.exe (não precisa instalar)
-npm run build:instalador  # gera dist/HelpaEuPhasmo Setup 1.0.0.exe (instalador)
+npm run build:zip         # gera dist/HelpaEuPhasmo-1.0.0-win-x64.zip
 npm run build             # gera os dois
+npm run build:instalador  # instalador NSIS (rode no Windows; no Linux exige wine 32-bit)
 ```
 
 O build também funciona no Linux/macOS para gerar o `.exe` de Windows (o electron-builder baixa o que precisa).
