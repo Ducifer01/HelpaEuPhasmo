@@ -6,46 +6,44 @@ Overlay ajudante para **Phasmophobia** que fica por cima do jogo e te ajuda a de
 
 ## O que ele faz
 
-- **Configuração do contrato**: pergunta se você está jogando com evidências, a dificuldade (Amador, Intermediário, Profissional, Pesadelo, Insanidade, Personalizada ou Apocalipse), o tamanho do mapa, a velocidade do fantasma (personalizada), Lua de Sangue e se o host está abaixo do nível 30 (Deogen).
-- **Evidências inteligentes**: marca ✓ encontrada ou ✗ descartada. Considera quantas evidências a dificuldade mostra, as **evidências garantidas** (Goryo/D.O.T.S., Hantu/Congelante, Obake/UV, Deogen e Moroi/Spirit Box) e os **orbes falsos do Mímico** (orbe em contrato sem evidências = Mímico).
-- **~60 características de comportamento** com 3 estados (sim / não / neutro), separadas em Velocidade, Caçada, Interações e Eventos. Ex.: "Muito rápido sem ter te visto" deixa só os fantasmas que ficam rápidos; "Pisou no sal" descarta o Wraith; "Fantasma acendeu uma luz" descarta a Mare.
-- **Sanidade na caçada**: diga a maior sanidade média em que ele já caçou e o app elimina quem não caça nessa faixa.
-- **Toque de passos**: aperte o atalho a cada passo do fantasma durante a caçada e veja a velocidade em m/s e quais fantasmas batem (com ou sem visão de você).
-- **Cronômetros**:
-  - **Incenso**: marcas em 60 s (Demon), 90 s (normal) e 180 s (Spirit).
-  - **Caçada**: duração de cada caçada comparada com a esperada (aponta Obambo) e cooldown de 25 s (aponta Demon).
-  - **Contrato**: desde a porta aberta — mostra as fases calmo/agressivo do Obambo.
-  - **Livre**: com botão "Som ouvido" para medir o intervalo entre sons paranormais (Myling).
-  - Quando um cronômetro detecta algo suspeito, aparece uma sugestão para marcar a característica.
-- **Card de cada fantasma** (clique): números, força/fraqueza, habilidades, sinais, **como testar** (conclusivo / forte / dica), **como identificar sem evidência**, com quem é confundido, o que descarta e dicas de sobrevivência. Botão direito no card descarta/restaura manualmente.
-- **Próximos testes sugeridos**: o app calcula quais testes melhor separam os fantasmas que sobraram.
-- **Guia rápido**: dificuldades, mecânicas (caçada, detecção, incenso, crucifixo, sanidade), dicas de profissionais para jogar sem evidência, tabela de evidências, itens amaldiçoados e fontes.
-- **HUD compacto** para deixar num canto da tela durante a partida, e **Dashboard completo** para investigar.
-- Tudo é salvo automaticamente (fechou o app, abriu de novo, continua de onde parou).
+- **Dashboard para investigar**: evidências em cima (teclas 1–7), só os fantasmas possíveis no meio, cronômetros e comportamentos ao lado. Guia e Ajustes ficam em abas separadas, fora da tela de jogo.
+- **Novo contrato em 2 cliques**: dificuldade (Amador, Intermediário, Profissional, Pesadelo, Insanidade, Personalizada ou **Sem evidências**) + tamanho do mapa, e Enter. "Repetir último" faz em 1 clique. Em "Mais opções": velocidade do fantasma e host abaixo do nível 30 (Deogen).
+- **Evidências inteligentes**: considera quantas evidências a dificuldade mostra, as **evidências garantidas** (Goryo/D.O.T.S., Hantu/Congelante, Obake/UV, Deogen e Moroi/Spirit Box) e os **orbes falsos do Mímico**.
+- **Sem evidências**: as 7 evidências dão lugar a **sinais únicos** de um fantasma só (orbe → Mímico, grito no parabólico → Banshee, apagou a luz → Mare, 6 dedos → Obake, respiração fria → Hantu, explosão → Poltergeist, respiração no Spirit Box → Deogen, porta + 15% → Yurei, sumiu na foto → Phantom, EMF no chão → Wraith).
+- **~60 comportamentos** com busca (`/`): digite "sal", "rápido", "luz"… O app mostra os testes que mais separam os fantasmas que sobraram.
+- **Sanidade na caçada**: diga a maior sanidade média em que ele caçou e o app elimina quem não caça nessa faixa.
+- **Cronômetros** com atalhos globais: **incenso** (marcas de 60/90/180 s), **caçada** (duração esperada e cooldown de 25 s), **contrato** (fases do Obambo) e **contador de passos** (aperte a cada passo que ouvir: m/s, passos por minuto e quais fantasmas batem). Quando um cronômetro vê algo suspeito (Demon, Obambo), ele sugere a marcação.
+- **Detalhe do fantasma** em gaveta lateral: como testar (conclusivo / forte / dica), como identificar sem evidência, habilidades, com quem é confundido e sobrevivência.
+- **Dois HUDs para o jogo**, cada um numa janela própria: **Cronômetros** e **Fantasmas** (evidências ou sinais, possíveis e teste sugerido). Arraste para onde quiser, ajuste **fundo** (até 0%, só o texto) e **tamanho**, escolha o que cada um mostra e **trave cada um separado**.
+- Tudo é salvo automaticamente: partida, posição dos HUDs e ajustes.
 
-<p align="center"><img src="docs/hud.png" width="300" alt="HUD compacto"> &nbsp; <img src="docs/fantasma.png" width="480" alt="Detalhes do fantasma"></p>
+<p align="center"><img src="docs/hud-t.png" width="300" alt="HUD Cronômetros"> &nbsp; <img src="docs/hud-f.png" width="300" alt="HUD Fantasmas"></p>
 
 ## Como usar com o jogo
 
-1. No Phasmophobia, vá em **Opções → Vídeo → Modo de tela** e escolha **Janela sem bordas** (Borderless). Em tela cheia exclusiva nenhum overlay consegue aparecer por cima.
-2. Abra o HelpaEuPhasmo. Ele fica sempre por cima do jogo.
-3. Use os atalhos globais (funcionam mesmo com o jogo em foco):
+1. No Phasmophobia, vá em **Opções → Vídeo → Modo de tela** e escolha **Janela sem bordas** (Borderless). Em tela cheia exclusiva nenhum overlay aparece por cima.
+2. Abra o HelpaEuPhasmo, escolha o contrato e aperte **H** (ou `Ctrl + Alt + D`) para o **Modo jogo**.
+3. Arraste cada HUD pela barra de cima, ajuste fundo e tamanho e clique no **cadeado** para travar (ou `F10` trava os dois). Travado, o mouse passa direto para o jogo.
+4. Para destravar: passe o mouse no **cadeadinho** no canto do HUD e clique, ou aperte `F10`.
+
+**Nunca fica sem saída**: o `F10` destrava, o ícone na bandeja tem **Destravar tudo** (um clique no ícone também destrava) e abrir o app de novo destrava tudo. No Dashboard, o clique-através mostra uma pílula amarela com o botão **Sair**, que continua clicável.
 
 | Ação | Atalho padrão |
 | --- | --- |
-| Mostrar / ocultar o overlay | `Ctrl + Alt + H` |
-| Clique-através (o mouse passa para o jogo) | `Ctrl + Alt + C` |
-| Alternar Dashboard / HUD compacto | `Ctrl + Alt + D` |
+| Incenso | `F6` |
+| Caçada começou / acabou | `F7` |
+| Passo do fantasma (toque a cada passo) | `F8` |
+| Cronômetro do contrato | `F9` |
+| Travar / destravar (HUDs ou clique-através) | `F10` |
+| Marcar evidência 1–7 (sem evidência: sinais 1–0) | `Alt + 1…7` |
+| Dashboard ↔ Modo jogo | `Ctrl + Alt + D` |
+| Mostrar / ocultar tudo | `Ctrl + Alt + H` |
 | Novo contrato | `Ctrl + Alt + N` |
-| Cronômetro de incenso | `F6` |
-| Caçada começou / terminou | `F7` |
-| Toque de passos | `F8` |
-| Cronômetro livre | `F9` |
 | Zerar cronômetros | `Ctrl + Alt + 0` |
 
-Todos os atalhos podem ser trocados em ⚙️ **Configurações** (também dá para ajustar a opacidade e o tamanho da interface). Arraste a janela pela barra de cima e redimensione pelo canto inferior direito. O ícone na bandeja do Windows também mostra/oculta e liga o clique-através.
+No Dashboard: `1–7` evidências (Shift ou botão direito descarta), `/` busca comportamento, `N` novo contrato, `H` Modo jogo, `Esc` fecha. Todos os atalhos globais podem ser trocados em **Ajustes → Atalhos**.
 
-> O overlay é só uma janela comum por cima do jogo: ele não lê nem altera nada do Phasmophobia.
+> O overlay é só um conjunto de janelas por cima do jogo: ele não lê nem altera nada do Phasmophobia.
 
 ## Baixar pronto
 
@@ -66,8 +64,8 @@ cd HelpaEuPhasmo
 npm install
 npm start                 # abre o overlay em modo de desenvolvimento
 npm test                  # testes do motor de dedução
-npm run build:portable    # gera dist/HelpaEuPhasmo-1.0.0-portable.exe (não precisa instalar)
-npm run build:zip         # gera dist/HelpaEuPhasmo-1.0.0-win-x64.zip
+npm run build:portable    # gera dist/HelpaEuPhasmo-2.0.0-portable.exe (não precisa instalar)
+npm run build:zip         # gera dist/HelpaEuPhasmo-2.0.0-win-x64.zip
 npm run build             # gera os dois
 npm run build:instalador  # instalador NSIS (rode no Windows; no Linux exige wine 32-bit)
 ```
@@ -77,17 +75,16 @@ O build também funciona no Linux/macOS para gerar o `.exe` de Windows (o electr
 ## Estrutura
 
 ```
-main.js                    processo principal do Electron (janela, atalhos, bandeja)
-preload.js                 ponte segura entre o Electron e a interface
-src/index.html             interface
-src/styles.css             visual
-src/js/app.js              lógica da interface, cronômetros, modais
-src/js/motor.js            motor de dedução (evidências, características, velocidade)
-src/data/fantasmas.js      os 30 fantasmas: evidências, velocidades, sanidade, testes, dicas
-src/data/caracteristicas.js comportamentos que filtram os fantasmas
-src/data/evidencias.js     evidências, dificuldades e mapas
-src/data/guia.js           mecânicas, dicas pro e itens amaldiçoados
-tests/motor.test.js        testes automatizados
+main.js                     processo principal: janelas (Dashboard + 2 HUDs), atalhos, bandeja, travas
+preload.js                  ponte segura entre o Electron e as telas
+src/index.html              Dashboard            src/js/dashboard.js   lógica do Dashboard
+src/hud.html                HUDs (?k=t / ?k=f)   src/js/hud.js         lógica dos HUDs
+src/js/estado.js            estado da partida e ações (evidências, sinais, cronômetros, passos)
+src/js/motor.js             motor de dedução (evidências, características, velocidade)
+src/js/ui.js                peças comuns da interface
+src/styles.css, src/fonts/  visual e fontes embutidas (Chakra Petch e Barlow, SIL OFL)
+src/data/                   fantasmas, características, evidências/dificuldades/mapas, guia
+tests/                      testes do motor e do estado (npm test)
 ```
 
 Quando sair uma atualização do jogo, normalmente basta editar os arquivos em `src/data/` e rodar `npm test`.

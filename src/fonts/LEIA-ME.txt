@@ -1,0 +1,4 @@
+Fontes embutidas (subconjunto latino, woff2):
+- Chakra Petch — Cadson Demak, SIL Open Font License 1.1
+- Barlow — Jeremy Tribby, SIL Open Font License 1.1
+Licença: https://openfontlicense.org
