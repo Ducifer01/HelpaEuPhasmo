@@ -1,0 +1,54 @@
+{
+  "name": "helpaeuphasmo",
+  "productName": "HelpaEuPhasmo",
+  "version": "1.0.0",
+  "description": "Overlay ajudante para Phasmophobia: evidências, características, cronômetros e dicas para identificar os fantasmas (inclusive sem evidências).",
+  "main": "main.js",
+  "author": "Ducifer01",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.test.js",
+    "build": "electron-builder --win nsis portable",
+    "build:portable": "electron-builder --win portable",
+    "build:instalador": "electron-builder --win nsis",
+    "build:dir": "electron-builder --win dir"
+  },
+  "build": {
+    "appId": "com.ducifer01.helpaeuphasmo",
+    "productName": "HelpaEuPhasmo",
+    "copyright": "Projeto de fãs, sem afiliação com a Kinetic Games.",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "HelpaEuPhasmo"
+    },
+    "portable": {
+      "artifactName": "HelpaEuPhasmo-${version}-portable.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0"
+  }
+}
